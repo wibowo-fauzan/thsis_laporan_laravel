@@ -9,6 +9,7 @@ use App\Http\Controllers\ContactMeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IndexagendakegiatanController;
+use App\Http\Controllers\IndexberitaandControllerController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\PendidikanDSWController;
 use App\Http\Controllers\PengumumanController;
@@ -46,7 +47,10 @@ Route::get('/Berita&Kegiatan', [BeritaDanArtikelCotroller::class, 'index']);
 Route::get('/Contact-Me', [ContactMeController::class, 'index']);
 Route::get('/Layanan', [LayananController::class, 'indexlayanan']);
 
+// indexing BLOG
 Route::get('/agenda/details/{id}', [IndexagendakegiatanController::class, 'showDetails']);
+Route::get('/berita/detail/{id}', [IndexberitaandControllerController::class, 'showDetails']);
+// indexing BLOG end
 
 Route::get('/Layanan/Pln-DSW', [PlnDSWController::class, 'plndsw']);
 Route::get('/Layanan/Pendidikan-DSW', [PendidikanDSWController::class, 'pendidikandsw']);

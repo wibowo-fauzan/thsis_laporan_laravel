@@ -28,18 +28,24 @@ class BeritaDanArtikelDashboardController extends Controller
             'date' => 'required|date',
         ]);
 
-        $imagePath = $request->file('image')->store('beritaAtikel', 'public');
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('beritaAtikel', 'public');
 
-        BeritaAtikel::create([
-            'title' => $request->input('title'),
-            'description' => $request->input('description'),
-            'image' => $imagePath,
-            'date' => $request->input('date'),
-        ]);
+            BeritaAtikel::create([
+                'title' => $request->input('title'),
+                'description' => $request->input('description'),
+                'image' => $imagePath,
+                'date' => $request->input('date'),
+            ]);
 
-        return redirect()->route('beritadanartikel.index')
-            ->with('success', 'Berita created successfully');
+            return redirect()->route('beritadanartikel.index')
+                ->with('success', 'Berita created successfully');
+        } else {
+            return redirect()->route('beritadanartikel.index')
+                ->with('error', 'Image upload failed. Please try again.');
+        }
     }
+
 
     public function show(BeritaAtikel $beritaAtikel)
     {
@@ -60,6 +66,8 @@ class BeritaDanArtikelDashboardController extends Controller
             'date' => 'required|date',
         ]);
 
+        $imagePath = $beritaAtikel->image; // Initialize $imagePath with the current image path
+
         $beritaAtikel->update([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
@@ -76,6 +84,7 @@ class BeritaDanArtikelDashboardController extends Controller
         return redirect()->route('beritadanartikel.index')
             ->with('success', 'Berita updated successfully');
     }
+
 
     public function destroy(BeritaAtikel $beritaAtikel)
     {

@@ -16,7 +16,7 @@
         <div class="path-link-beranda mt-5">
             <a href="/" class="text-decoration-none">Beranda ></a>
             <a href="/Layanan" class="text-decoration-none">Layanan DSW ></a>
-            <a class="text-decoration-none text-dark">Layanan Peta DSW</a>
+            <a class="text-decoration-none text-dark">Layanan PETA DSW</a>
         </div>
         <div class="d-flex">
             <hr class="wdth-pndk-pls">

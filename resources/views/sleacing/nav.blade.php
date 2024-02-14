@@ -63,7 +63,7 @@
                                 <a href="/Pengumuman" class="text-decoration-none text-dark hover-text-nav btn">Pengumuman</a>
                             </div>
                             <div class="col-xl-12">
-                                <a href="/Berita&Kegiatan" class="text-decoration-none text-dark hover-text-nav btn">Beirta & Artikel</a>
+                                <a href="/Berita&Kegiatan" class="text-decoration-none text-dark hover-text-nav btn">Berita & Artikel</a>
                             </div>
                         </div>
                     </div>
